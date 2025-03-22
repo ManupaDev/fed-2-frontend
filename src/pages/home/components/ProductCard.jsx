@@ -3,33 +3,42 @@ import { Button } from "@/components/ui/button";
 import { useSelector, useDispatch } from "react-redux";
 import { addToCart } from "@/lib/features/cartSlice";
 
-function ProductCard({ image, name, price }) {
+function ProductCard(props) {
+  const { image, name, price, _id, description } = props;
   const dispatch = useDispatch();
 
-  const handleClick = (e) => {
+  const handleClick = () => {
     dispatch(
       addToCart({
-        _id: props._id,
-        name: props.name,
-        price: props.price,
-        image: props.image,
-        description: props.description,
+        _id,
+        name,
+        price,
+        image,
+        description,
       })
     );
   };
 
   return (
-    <div>
-      <div className="h-96">
+    <div className="group cursor-pointer">
+      <div className="h-96 relative overflow-hidden rounded-2xl">
         <img
           src={image}
           alt={name}
-          className="rounded-2xl w-full h-full object-cover"
+          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
         />
+        <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300 flex items-end justify-center">
+          <Button 
+            onClick={handleClick} 
+            className="mb-4 transform translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300"
+          >
+            Add to Cart
+          </Button>
+        </div>
       </div>
-      <div className="mt-2">
-        <span className="text-2xl block">{name}</span>
-        <span className="text-xl block">${price}</span>
+      <div className="mt-3">
+        <span className="text-lg font-medium block">{name}</span>
+        <span className="text-lg block">${price?.toFixed(2)}</span>
       </div>
     </div>
   );

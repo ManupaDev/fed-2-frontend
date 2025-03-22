@@ -20,7 +20,21 @@ export const Api = createApi({
 
   endpoints: (builder) => ({
     getProducts: builder.query({
-      query: () => `products`,
+      query: (params = {}) => {
+        const { categorySlug, colorSlug, featured } = params;
+        let queryString = 'products';
+        
+        const queryParams = [];
+        if (categorySlug) queryParams.push(`categorySlug=${categorySlug}`);
+        if (colorSlug) queryParams.push(`colorSlug=${colorSlug}`);
+        if (featured !== undefined) queryParams.push(`featured=${featured}`);
+        
+        if (queryParams.length > 0) {
+          queryString += `?${queryParams.join('&')}`;
+        }
+        
+        return queryString;
+      },
     }),
     getCategories: builder.query({
       query: () => `categories`,

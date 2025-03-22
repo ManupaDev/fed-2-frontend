@@ -19,7 +19,7 @@ export default function Navigation() {
 
   return (
     <header className="bg-white border-b border-gray-200 px-16">
-      <div className="container mx-auto px-4">
+      <div>
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="font-bold text-2xl">
