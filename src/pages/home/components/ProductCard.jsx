@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { useSelector, useDispatch } from "react-redux";
 import { addToCart } from "@/lib/features/cartSlice";
 
-function ProductCard(props) {
+function ProductCard({ image, name, price }) {
   const dispatch = useDispatch();
 
   const handleClick = (e) => {
@@ -19,23 +19,19 @@ function ProductCard(props) {
   };
 
   return (
-    <Card>
-      <div className="h-80 bg-card rounded-lg p-4 relative">
-        <img src={props.image} className="block" />
+    <div>
+      <div className="h-96">
+        <img
+          src={image}
+          alt={name}
+          className="rounded-2xl w-full h-full object-cover"
+        />
       </div>
-      <div className="flex px-4 mt-4  items-center justify-between">
-        <h2 className="text-2xl  font-semibold">{props.name}</h2>
-        <span className="block text-lg font-medium">${props.price}</span>
+      <div className="mt-2">
+        <span className="text-2xl block">{name}</span>
+        <span className="text-xl block">${price}</span>
       </div>
-      <div className="px-4 mt-2">
-        <p className="text-sm">{props.description}</p>
-      </div>
-      <div className="mt-1 p-4">
-        <Button className="w-full" onClick={handleClick}>
-          Add To Cart
-        </Button>
-      </div>
-    </Card>
+    </div>
   );
 }
 
