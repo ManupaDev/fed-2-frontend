@@ -55,7 +55,7 @@ function ShopPage() {
               ))}
             </div>
           ) : products && products.length === 0 ? (
-            <div className="py-10">
+            <div>
               <p className="text-xl">
                 No products found with the selected filters.
               </p>

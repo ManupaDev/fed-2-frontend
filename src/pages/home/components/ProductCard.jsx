@@ -27,18 +27,18 @@ function ProductCard(props) {
           alt={name}
           className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
         />
-        <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300 flex items-end justify-center">
-          <Button 
-            onClick={handleClick} 
-            className="mb-4 transform translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300"
-          >
-            Add to Cart
-          </Button>
-        </div>
       </div>
-      <div className="mt-3">
-        <span className="text-lg font-medium block">{name}</span>
-        <span className="text-lg block">${price?.toFixed(2)}</span>
+      <div className="mt-3 space-y-3">
+        <div>
+          <span className="text-lg font-medium block">{name}</span>
+          <span className="text-lg block">${price?.toFixed(2)}</span>
+        </div>
+        <Button 
+          onClick={handleClick} 
+          className="w-full transition-all duration-300"
+        >
+          Add to Cart
+        </Button>
       </div>
     </div>
   );
