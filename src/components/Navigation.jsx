@@ -30,10 +30,10 @@ export default function Navigation() {
           <nav className="hidden md:flex space-x-8">
             {[
               { path: "/shop/shoes", label: "Shoes" },
-              { path: "/shop/t-shirt", label: "T-Shirt" },
+              { path: "/shop/tshirts", label: "T-Shirt" },
               { path: "/shop/shorts", label: "Shorts" },
-              { path: "/shop/hat", label: "Hats" },
-              { path: "/shop/jackets", label: "Jackets" },
+              { path: "/shop/pants", label: "Pants" },
+              { path: "/shop/socks", label: "Socks" },
             ].map((item) => (
               <Link
                 key={item.path}
@@ -90,8 +90,8 @@ export default function Navigation() {
               { path: "/shop/shoes", label: "Shoes" },
               { path: "/shop/t-shirt", label: "T-Shirt" },
               { path: "/shop/shorts", label: "Shorts" },
-              { path: "/shop/hat", label: "Hats" },
-              { path: "/shop/jackets", label: "Jackets" },
+              { path: "/shop/pants", label: "Pants" },
+              { path: "/shop/socks", label: "Socks" },
             ].map((item) => (
               <Link
                 key={item.path}

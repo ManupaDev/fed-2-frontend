@@ -16,9 +16,9 @@ function ShopFilters() {
 
   // This would normally come from an API but we'll simulate it
   const colors = [
-    { slug: "red", name: "Red", hex: "#FF0000" },
-    { slug: "blue", name: "Blue", hex: "#0000FF" },
-    { slug: "green", name: "Green", hex: "#00FF00" },
+    { slug: "resin", name: "Resin", hex: "#6C7C59" },
+    { slug: "pimento", name: "Pimento", hex: "#BF3B2F" },
+    { slug: "bright_ceramic", name: "Bright Ceramic", hex: "#FFA500" },
     { slug: "black", name: "Black", hex: "#000000" },
     { slug: "white", name: "White", hex: "#FFFFFF" },
   ];

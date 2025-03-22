@@ -4,11 +4,11 @@ import CategoryButton from './CategoryButton';
 
 function TrendingSection() {
   const categories = [
-    { id: 1, name: "SHORTS" },
-    { id: 2, name: "HATS" },
-    { id: 3, name: "JACKETS" },
-    { id: 4, name: "SHOES" },
-    { id: 5, name: "T-SHIRT" }
+    { id: 1, name: "Shorts" },
+    { id: 2, name: "Socks" },
+    { id: 3, name: "Pants" },
+    { id: 4, name: "Shoes" },
+    { id: 5, name: "T-Shirt" }
   ];
 
   const [selectedCategoryId, setSelectedCategoryId] = useState(4); // Default to SHOES
