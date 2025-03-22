@@ -20,10 +20,11 @@ export default function Navigation() {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
             {[
-              { path: "/category/shoes", label: "Shop" },
               { path: "/category/shoes", label: "Shoes" },
-              { path: "/category/clothing", label: "Clothing" },
-              { path: "/category/accessories", label: "Accessories" },
+              { path: "/category/t-shirt", label: "T-Shirt" },
+              { path: "/category/shorts", label: "Shorts" },
+              { path: "/category/hat", label: "Hat" },
+              { path: "/category/jackets", label: "Jackets" },
             ].map((item) => (
               <Link
                 key={item.path}
@@ -68,10 +69,10 @@ export default function Navigation() {
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-gray-200">
             {[
               { path: "/category/shoes", label: "Shoes" },
-              { path: "/category/clothing", label: "Clothing" },
-              { path: "/category/accessories", label: "Accessories" },
-              { path: "/new-arrivals", label: "New Arrivals" },
-              { path: "/sale", label: "Sale" },
+              { path: "/category/t-shirt", label: "T-Shirt" },
+              { path: "/category/shorts", label: "Shorts" },
+              { path: "/category/hat", label: "Hats" },
+              { path: "/category/jackets", label: "Jackets" },
             ].map((item) => (
               <Link
                 key={item.path}

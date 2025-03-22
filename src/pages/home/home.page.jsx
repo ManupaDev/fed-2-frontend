@@ -74,7 +74,7 @@ function HomePage() {
         <div className="flex justify-between items-center">
           <h2 className="text-3xl">Trending</h2>
           <div className="flex items-center gap-x-4">
-            {["SHORTS", "HAT", "JACKETS", "SHOES", "T-SHIRT"].map((item) => (
+            {["SHORTS", "HATS", "JACKETS", "SHOES", "T-SHIRT"].map((item) => (
               <button className="border border-black rounded-full px-4 py-2">
                 {item}
               </button>
