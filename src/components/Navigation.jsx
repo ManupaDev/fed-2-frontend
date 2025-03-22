@@ -29,11 +29,11 @@ export default function Navigation() {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
             {[
-              { path: "/category/shoes", label: "Shoes" },
-              { path: "/category/t-shirt", label: "T-Shirt" },
-              { path: "/category/shorts", label: "Shorts" },
-              { path: "/category/hat", label: "Hats" },
-              { path: "/category/jackets", label: "Jackets" },
+              { path: "/shop/shoes", label: "Shoes" },
+              { path: "/shop/t-shirt", label: "T-Shirt" },
+              { path: "/shop/shorts", label: "Shorts" },
+              { path: "/shop/hat", label: "Hats" },
+              { path: "/shop/jackets", label: "Jackets" },
             ].map((item) => (
               <Link
                 key={item.path}
@@ -87,11 +87,11 @@ export default function Navigation() {
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-gray-200">
             {[
-              { path: "/category/shoes", label: "Shoes" },
-              { path: "/category/t-shirt", label: "T-Shirt" },
-              { path: "/category/shorts", label: "Shorts" },
-              { path: "/category/hat", label: "Hats" },
-              { path: "/category/jackets", label: "Jackets" },
+              { path: "/shop/shoes", label: "Shoes" },
+              { path: "/shop/t-shirt", label: "T-Shirt" },
+              { path: "/shop/shorts", label: "Shorts" },
+              { path: "/shop/hat", label: "Hats" },
+              { path: "/shop/jackets", label: "Jackets" },
             ].map((item) => (
               <Link
                 key={item.path}
