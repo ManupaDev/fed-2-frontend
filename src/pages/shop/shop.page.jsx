@@ -31,7 +31,7 @@ function ShopPage() {
   );
 
   return (
-    <div className="px-16 min-h-screen">
+    <div className="px-16 min-h-screen pb-8">
       <div className="mt-8">
         <h1 className="text-3xl font-bold mb-8">Shop</h1>
       </div>

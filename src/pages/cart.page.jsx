@@ -7,7 +7,7 @@ function CartPage() {
   const cart = useSelector((state) => state.cart.value);
 
   return (
-    <main className="px-8">
+    <main className="px-16 min-h-screen py-8">
       <h2 className="text-4xl font-bold">My Cart</h2>
       <div className="mt-4 grid grid-cols-2 w-1/2 gap-x-4">
         {cart.map((item, index) => (

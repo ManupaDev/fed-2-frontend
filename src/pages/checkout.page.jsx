@@ -11,7 +11,7 @@ function CheckoutPage() {
   }
 
   return (
-    <main className="px-8">
+    <main className="px-16 min-h-screen py-8">
       <h2 className="text-4xl font-bold">Checkout Page</h2>
       <div className="mt-4">
         <h3 className="text-3xl font-semibold">Order Details</h3>
