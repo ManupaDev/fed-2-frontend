@@ -38,6 +38,9 @@ export const Api = createApi({
     }),
     getCategories: builder.query({
       query: () => `categories`,
+    }), 
+    getColors: builder.query({
+      query: () => `colors`,
     }),
     getOrder: builder.query({
       query: (id) => `orders/${id}`,
@@ -66,6 +69,7 @@ export const Api = createApi({
 export const {
   useGetProductsQuery,
   useGetCategoriesQuery,
+  useGetColorsQuery,
   useCreateOrderMutation,
   useGetOrderQuery,
   useCreateCheckoutSessionMutation,
