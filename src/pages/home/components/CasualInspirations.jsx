@@ -1,6 +1,6 @@
 function CasualInspirations() {
   return (
-    <section className="px-16 grid grid-cols-8 mt-4 gap-x-4 h-80 pb-8">
+    <section className="px-4 lg:px-16 grid grid-cols-8 mt-4 gap-x-4 h-80 pb-8">
       <div className="col-span-2">
         <h1 className="text-6xl">Casual Inspirations</h1>
         <p className="mt-4">

@@ -33,7 +33,7 @@ function TrendingSection() {
   };
 
   return (
-    <section className="px-16 py-8">
+    <section className="px-4 lg:px-16 py-8">
       <div className="flex justify-between items-center">
         <h2 className="text-3xl">Trending</h2>
         <div className="flex items-center gap-x-4">

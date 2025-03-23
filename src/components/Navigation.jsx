@@ -18,7 +18,7 @@ export default function Navigation() {
   const closeMobileMenu = () => setIsMenuOpen(false);
 
   return (
-    <header className="bg-white border-b border-gray-200 px-16">
+    <header className="bg-white border-b border-gray-200 px-4 lg:px-16">
       <div>
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -60,15 +60,17 @@ export default function Navigation() {
                 {cartItemCount}
               </span>
             </Link>
-            <SignedIn>
-              <UserButton />
-            </SignedIn>
-            <SignedOut>
-              <div className="flex items-center gap-4">
-                <Link to="/sign-in">Sign In</Link>
-                <Link to="/sign-up">Sign Up</Link>
-              </div>
-            </SignedOut>
+            <div className="hidden md:block">
+              <SignedIn>
+                <UserButton />
+              </SignedIn>
+              <SignedOut>
+                <div className="flex items-center gap-4">
+                  <Link to="/sign-in">Sign In</Link>
+                  <Link to="/sign-up">Sign Up</Link>
+                </div>
+              </SignedOut>
+            </div>
 
             {/* Mobile menu button */}
             <button
@@ -88,7 +90,7 @@ export default function Navigation() {
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-gray-200">
             {[
               { path: "/shop/shoes", label: "Shoes" },
-              { path: "/shop/t-shirt", label: "T-Shirt" },
+              { path: "/shop/tshirts", label: "T-Shirt" },
               { path: "/shop/shorts", label: "Shorts" },
               { path: "/shop/pants", label: "Pants" },
               { path: "/shop/socks", label: "Socks" },

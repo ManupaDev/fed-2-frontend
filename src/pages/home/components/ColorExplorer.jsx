@@ -10,7 +10,7 @@ function ColorExplorer() {
   };
   
   return (
-    <section className="px-16 pt-20 pb-8">
+    <section className="px-4 lg:px-16 pt-20 pb-8">
       <div className="flex items-center justify-between">
         <h1 className="text-6xl w-96">
           Explore <br />

@@ -1,6 +1,6 @@
 function HeroGrid() {
   return (
-    <section className="grid grid-cols-3 px-16 min-h-[80vh] gap-x-4 ">
+    <section className="grid grid-cols-3 px-4 lg:px-16 min-h-[80vh] gap-x-4 ">
       <div className="relative border-red-500 col-span-2 rounded-2xl">
         <img
           src={
