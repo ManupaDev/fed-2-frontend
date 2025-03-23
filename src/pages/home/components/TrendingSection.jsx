@@ -2,9 +2,13 @@ import { useState } from 'react';
 import SimpleProductCard from './SimpleProductCard';
 import CategoryButton from './CategoryButton';
 import { useGetCategoriesQuery, useGetProductsQuery } from '@/lib/api';
+import { useMediaQuery } from "@uidotdev/usehooks";
 
 function TrendingSection() {
   
+  const isMediumDevice = useMediaQuery(
+    "only screen and (min-width : 769px) and (max-width : 992px)"
+  );
   const { data: categories, isLoading: categoriesLoading } = useGetCategoriesQuery();
   
   const { data: trendingProducts, isLoading: productsLoading } = useGetProductsQuery({
@@ -56,7 +60,7 @@ function TrendingSection() {
             image={product.image}
             name={product.name}
             price={product.price}
-            colSpan={getColSpan(index)}
+            colSpan={!isMediumDevice ? getColSpan(index) : 1}
           />
         ))}
       </div>

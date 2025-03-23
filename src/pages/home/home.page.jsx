@@ -20,7 +20,6 @@ function HomePage() {
 
   return (
     <main className="flex flex-col gap-8 md:gap-12 pb-8">
-      <Hero />
       <HeroGrid />
       <CasualInspirations />
       <TrendingSection />

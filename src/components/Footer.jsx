@@ -14,7 +14,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-black text-white py-8 pl-16">
+    <footer className="bg-black text-white py-8 pl-8 md:pl-16">
       <div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand and Newsletter */}
