@@ -1,22 +1,25 @@
-import { useState } from 'react';
-import SimpleProductCard from './SimpleProductCard';
-import CategoryButton from './CategoryButton';
-import { useGetCategoriesQuery, useGetProductsQuery } from '@/lib/api';
+import { useState } from "react";
+import SimpleProductCard from "./SimpleProductCard";
+import CategoryButton from "./CategoryButton";
+import { useGetCategoriesQuery, useGetProductsQuery } from "@/lib/api";
 import { useMediaQuery } from "@uidotdev/usehooks";
 
 function TrendingSection() {
-  
   const isMediumDevice = useMediaQuery(
-    "only screen and (min-width : 769px) and (max-width : 992px)"
+    "only screen and (min-width : 768px)"
   );
-  const { data: categories, isLoading: categoriesLoading } = useGetCategoriesQuery();
-  
-  const { data: trendingProducts, isLoading: productsLoading } = useGetProductsQuery({
-    featured: true
-  });
+  const { data: categories, isLoading: categoriesLoading } =
+    useGetCategoriesQuery();
 
-  const [selectedCategoryId, setSelectedCategoryId] = useState("67dee99f12d36efdd1027b40"); // Default to SHOES
-  
+  const { data: trendingProducts, isLoading: productsLoading } =
+    useGetProductsQuery({
+      featured: true,
+    });
+
+  const [selectedCategoryId, setSelectedCategoryId] = useState(
+    "67dee99f12d36efdd1027b40"
+  ); // Default to SHOES
+
   const handleCategoryClick = (categoryId) => {
     console.log(categoryId);
     setSelectedCategoryId(categoryId);
@@ -24,7 +27,7 @@ function TrendingSection() {
 
   // Filter products by selected category
   const filteredProducts = trendingProducts?.filter(
-    product => product.categoryId === selectedCategoryId
+    (product) => product.categoryId === selectedCategoryId
   );
 
   /**
@@ -33,8 +36,11 @@ function TrendingSection() {
    */
   const getColSpan = (index) => {
     // For mobile, all items will be single column
-    return ((index + 1) === 3 || (index + 1) === 4) ? 2 : 1;
+    return index + 1 === 3 || index + 1 === 4 ? 2 : 1;
   };
+
+  console.log(isMediumDevice);
+  
 
   return (
     <section className="px-4 lg:px-16 py-8">
@@ -51,16 +57,16 @@ function TrendingSection() {
           ))}
         </div>
       </div>
-      
+
       {/* Products Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-4 gap-4 md:gap-x-4 md:gap-y-8">
         {filteredProducts?.map((product, index) => (
-          <SimpleProductCard 
-            key={product.id}
+          <SimpleProductCard
+            key={product._id}
             image={product.image}
             name={product.name}
             price={product.price}
-            colSpan={!isMediumDevice ? getColSpan(index) : 1}
+            colSpan={isMediumDevice ? getColSpan(index) : 1}
           />
         ))}
       </div>
@@ -68,4 +74,4 @@ function TrendingSection() {
   );
 }
 
-export default TrendingSection; 
+export default TrendingSection;

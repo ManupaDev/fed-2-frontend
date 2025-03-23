@@ -60,10 +60,10 @@ export default function Navigation() {
                 {cartItemCount}
               </span>
             </Link>
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
             <div className="hidden md:block">
-              <SignedIn>
-                <UserButton />
-              </SignedIn>
               <SignedOut>
                 <div className="flex items-center gap-4">
                   <Link to="/sign-in">Sign In</Link>
@@ -104,6 +104,15 @@ export default function Navigation() {
                 {item.label}
               </Link>
             ))}
+          </div>
+
+          <div className="block md:hidden px-4">
+            <SignedOut>
+              <div className="flex items-center gap-4">
+                <Link to="/sign-in">Sign In</Link>
+                <Link to="/sign-up">Sign Up</Link>
+              </div>
+            </SignedOut>
           </div>
         </div>
       )}

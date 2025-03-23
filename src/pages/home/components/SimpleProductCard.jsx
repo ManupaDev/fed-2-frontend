@@ -1,6 +1,6 @@
 function SimpleProductCard({ image, name, price, colSpan = 1 }) {
   return (
-    <div className={`col-span-${colSpan} sm:col-span-${colSpan}`}>
+    <div className={`col-span-${colSpan}`}>
       <div className="h-64 sm:h-72 md:h-80 lg:h-96">
         <img
           src={image}
