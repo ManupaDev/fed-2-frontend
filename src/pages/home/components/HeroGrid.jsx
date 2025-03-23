@@ -9,6 +9,16 @@ function HeroGrid() {
           className="rounded-2xl w-full h-full object-cover"
           alt="hero"
         />
+        <div className="absolute top-8 left-8">
+          <h1 className="text-6xl  text-white">
+            Color of <br /> Summer
+            <br /> Outfit
+          </h1>
+          <p className="text-white text-xl mt-4">
+            100+ Collections for your <br /> outfit inspirations <br />
+            in this summer
+          </p>
+        </div>
       </div>
       <div className="col-span-1 grid grid-rows-2 gap-y-4">
         <div className="rounded-2xl relative">
@@ -17,6 +27,11 @@ function HeroGrid() {
             alt="Featured product"
             className="rounded-2xl w-full h-full object-cover"
           />
+          <div className="absolute top-4 left-4">
+            <h1 className="text-5xl  text-black">
+              Outdoor <br /> Active
+            </h1>
+          </div>
         </div>
         <div className="relative">
           <img
@@ -24,10 +39,15 @@ function HeroGrid() {
             alt="Featured product"
             className="rounded-2xl w-full h-full object-cover"
           />
+          <div className="absolute top-4 left-4">
+            <h1 className="text-5xl  text-black">
+              Casual <br /> Comfort
+            </h1>
+          </div>
         </div>
       </div>
     </section>
   );
 }
 
-export default HeroGrid; 
+export default HeroGrid;
