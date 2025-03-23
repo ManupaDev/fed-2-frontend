@@ -1,7 +1,7 @@
 function SimpleProductCard({ image, name, price, colSpan = 1 }) {
   return (
-    <div className={`col-span-${colSpan}`}>
-      <div className="h-96">
+    <div className={`col-span-${colSpan} sm:col-span-${colSpan}`}>
+      <div className="h-64 sm:h-72 md:h-80 lg:h-96">
         <img
           src={image}
           alt={name}
@@ -9,8 +9,8 @@ function SimpleProductCard({ image, name, price, colSpan = 1 }) {
         />
       </div>
       <div className="mt-2">
-        <span className="text-2xl block">{name}</span>
-        <span className="text-xl block">${price}</span>
+        <span className="text-lg sm:text-xl md:text-2xl block">{name}</span>
+        <span className="text-base sm:text-lg md:text-xl block">${price}</span>
       </div>
     </div>
   );

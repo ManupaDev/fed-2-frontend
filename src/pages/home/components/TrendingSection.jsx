@@ -2,6 +2,7 @@ import { useState } from 'react';
 import SimpleProductCard from './SimpleProductCard';
 import CategoryButton from './CategoryButton';
 import { useGetCategoriesQuery, useGetProductsQuery } from '@/lib/api';
+
 function TrendingSection() {
   
   const { data: categories, isLoading: categoriesLoading } = useGetCategoriesQuery();
@@ -12,8 +13,6 @@ function TrendingSection() {
 
   const [selectedCategoryId, setSelectedCategoryId] = useState("67dee99f12d36efdd1027b40"); // Default to SHOES
   
-  
-
   const handleCategoryClick = (categoryId) => {
     console.log(categoryId);
     setSelectedCategoryId(categoryId);
@@ -29,14 +28,15 @@ function TrendingSection() {
    * Every 3rd product (indices 2, 5, 8, etc.) will have colSpan=2
    */
   const getColSpan = (index) => {
-    return ((index + 1) === 3 || (index + 1) === 4)?  2 : 1;
+    // For mobile, all items will be single column
+    return ((index + 1) === 3 || (index + 1) === 4) ? 2 : 1;
   };
 
   return (
     <section className="px-4 lg:px-16 py-8">
-      <div className="flex justify-between items-center">
-        <h2 className="text-3xl">Trending</h2>
-        <div className="flex items-center gap-x-4">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-0">
+        <h2 className="text-2xl sm:text-3xl">Trending</h2>
+        <div className="flex flex-wrap items-center gap-2 sm:gap-x-4 max-w-full overflow-x-auto pb-2">
           {categories?.map((category) => (
             <CategoryButton
               key={category._id}
@@ -49,7 +49,7 @@ function TrendingSection() {
       </div>
       
       {/* Products Grid */}
-      <div className="grid grid-cols-4 mt-4 gap-x-4 gap-y-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-4 gap-4 md:gap-x-4 md:gap-y-8">
         {filteredProducts?.map((product, index) => (
           <SimpleProductCard 
             key={product.id}
